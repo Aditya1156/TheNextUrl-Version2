@@ -4,10 +4,10 @@ import { siteConfig } from "@/lib/config";
 
 const serviceLinks = [
   { label: "Web Development", href: "/services/website-design-karnataka" },
-  { label: "School ERP Systems", href: "/services/school-erp-development" },
-  { label: "E-Commerce Platforms", href: "/services/ecommerce-development" },
-  { label: "Mobile App Development", href: "/services/mobile-app-development" },
-  { label: "Admin Dashboards", href: "/services/admin-dashboard-development" },
+  { label: "School ERP", href: "/services/school-erp-development" },
+  { label: "E-Commerce", href: "/services/ecommerce-development" },
+  { label: "Mobile Apps", href: "/services/mobile-app-development" },
+  { label: "Dashboards", href: "/services/admin-dashboard-development" },
 ];
 
 const companyLinks = [
@@ -19,39 +19,32 @@ const companyLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand */}
+    <footer className="bg-primary-dark">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent text-white">
-                <Zap className="h-5 w-5" />
+            <Link href="/" className="flex items-center gap-2 mb-3">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent text-white">
+                <Zap className="h-3.5 w-3.5" />
               </div>
-              <span className="text-xl font-bold">{siteConfig.name}</span>
+              <span className="text-base font-semibold text-white">{siteConfig.name}</span>
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed mb-4">
-              {siteConfig.tagline}. Built with precision. Designed to scale.
+            <p className="text-xs text-slate-500 leading-relaxed mb-3">
+              {siteConfig.tagline}.
             </p>
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <span className="inline-block rounded bg-slate-800 px-2 py-1">
-                {siteConfig.msme}
-              </span>
-            </div>
+            <span className="text-[10px] text-slate-600 uppercase tracking-wider">
+              {siteConfig.msme}
+            </span>
           </div>
 
-          {/* Services */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-300">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
               Services
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-accent"
-                  >
+                  <Link href={link.href} className="text-xs text-slate-500 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -59,18 +52,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-300">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
               Company
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-accent"
-                  >
+                  <Link href={link.href} className="text-xs text-slate-500 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -78,39 +67,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-300">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
               Contact
             </h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-sm text-slate-400">
-                <Phone className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                <a href={`tel:${siteConfig.phone}`} className="hover:text-white">
-                  {siteConfig.phone}
-                </a>
+            <ul className="space-y-2.5">
+              <li className="flex items-center gap-2 text-xs text-slate-500">
+                <Phone className="h-3 w-3 text-slate-600 shrink-0" />
+                <a href={`tel:${siteConfig.phone}`} className="hover:text-white">{siteConfig.phone}</a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-slate-400">
-                <Mail className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
-                  {siteConfig.email}
-                </a>
+              <li className="flex items-center gap-2 text-xs text-slate-500">
+                <Mail className="h-3 w-3 text-slate-600 shrink-0" />
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-white">{siteConfig.email}</a>
               </li>
-              <li className="flex items-start gap-3 text-sm text-slate-400">
-                <MapPin className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+              <li className="flex items-center gap-2 text-xs text-slate-500">
+                <MapPin className="h-3 w-3 text-slate-600 shrink-0" />
                 <span>{siteConfig.location}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        <div className="mt-10 border-t border-slate-800/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[11px] text-slate-600">
+            &copy; {new Date().getFullYear()} {siteConfig.name}
           </p>
-          <p className="text-xs text-slate-500">
-            Built with Next.js &middot; Serving Clients Across India
+          <p className="text-[11px] text-slate-600">
+            Built with Next.js
           </p>
         </div>
       </div>

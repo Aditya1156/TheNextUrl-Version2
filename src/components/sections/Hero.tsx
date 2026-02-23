@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Play, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-primary-dark">
-      {/* Background image */}
+    <section className="relative min-h-screen flex items-center bg-primary-dark">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/hero-bg.jpg"
@@ -16,66 +16,52 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-primary-dark/75" />
-        {/* Decorative shapes */}
-        <div className="absolute top-20 left-10 w-64 h-64 rounded-full border border-white/5 animate-float" />
-        <div className="absolute bottom-20 right-20 w-48 h-48 rounded-full border border-accent/10 animate-float" style={{ animationDelay: "3s" }} />
+        <div className="absolute inset-0 bg-primary-dark/80" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-32">
-        <div className="max-w-3xl">
-          {/* Tag */}
-          <span className="section-tag mb-6 inline-block">
-            Modern Digital Agency
-          </span>
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium tracking-widest text-accent uppercase mb-6">
+            Digital Agency
+          </p>
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.15] mb-6">
             Digital Infrastructure for Institutions &{" "}
-            <span className="relative">
-              <span className="accent-underline">Businesses</span>
-            </span>
+            <span className="text-accent">Businesses</span>
           </h1>
 
-          {/* Subtext */}
-          <p className="text-lg text-slate-300 leading-relaxed mb-8 max-w-xl">
+          <p className="text-base text-slate-400 leading-relaxed mb-10 max-w-lg">
             Websites. ERP Systems. Booking Platforms. Mobile Apps.
-            <br />
             Built with precision. Designed to scale.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 mb-12">
+          <div className="flex flex-wrap items-center gap-4 mb-14">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-dark hover:shadow-lg hover:shadow-accent/25"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
             >
               Get Free Consultation
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/solutions"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-accent"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white/30"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-colors hover:border-accent">
-                <Play className="h-4 w-4 ml-0.5" />
-              </span>
               View Solutions
             </Link>
           </div>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400">
-            <span className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-accent" />
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-500">
+            <span className="flex items-center gap-1.5">
+              <Check className="h-3.5 w-3.5 text-accent" />
               MSME Registered
             </span>
-            <span className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-accent" />
+            <span className="flex items-center gap-1.5">
+              <Check className="h-3.5 w-3.5 text-accent" />
               Built with Next.js
             </span>
-            <span className="flex items-center gap-2">
-              <Check className="h-4 w-4 text-accent" />
+            <span className="flex items-center gap-1.5">
+              <Check className="h-3.5 w-3.5 text-accent" />
               Serving Clients Across India
             </span>
           </div>
