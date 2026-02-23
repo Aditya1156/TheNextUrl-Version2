@@ -95,13 +95,17 @@ export default function SolutionsPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-primary-dark">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative pt-32 pb-16 bg-primary-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/coding.jpg" alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-primary-dark/85" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <SectionTag>Our Solutions</SectionTag>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Exploring Business World Through Our Services
           </h1>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+          <p className="text-base text-slate-400 max-w-xl mx-auto">
             End-to-end digital solutions engineered for performance, security,
             and scale.
           </p>

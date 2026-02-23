@@ -29,17 +29,21 @@ export default function ServicePageLayout({
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-primary-dark">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
+      <section className="relative pt-32 pb-16 bg-primary-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src={image || "/images/office-meeting.jpg"} alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-primary-dark/85" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
             <SectionTag>{tag}</SectionTag>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               {title}
             </h1>
-            <p className="text-lg text-slate-300 mb-8">{subtitle}</p>
+            <p className="text-base text-slate-400 mb-8">{subtitle}</p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-accent-dark"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
             >
               Get Free Quote
               <ArrowRight className="h-4 w-4" />

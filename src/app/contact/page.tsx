@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import SectionTag from "@/components/ui/SectionTag";
 import { siteConfig } from "@/lib/config";
-import type { Metadata } from "next";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -29,13 +29,17 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="pt-32 pb-16 bg-primary-dark">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative pt-32 pb-16 bg-primary-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/images/consultation.jpg" alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-primary-dark/85" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <SectionTag>Contact Us</SectionTag>
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Let&apos;s Build Something Great
           </h1>
-          <p className="text-lg text-slate-300 max-w-xl mx-auto">
+          <p className="text-base text-slate-400 max-w-lg mx-auto">
             Free consultation. No obligations. Tell us about your project.
           </p>
         </div>
